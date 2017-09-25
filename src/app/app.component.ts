@@ -12,9 +12,5 @@ export class AppComponent {
   selectedTopic  = null;
   currentDate: any = moment();
 
-  masterTopicList: Topic[] = [
-    new Topic('MVC', 'C#','Parul Mishra', ['This topic is very interesting']),
-    new Topic('Tutorial', 'C#','Parul Mishra', ['This topic is very very interesting'])
-  ]
 
 }

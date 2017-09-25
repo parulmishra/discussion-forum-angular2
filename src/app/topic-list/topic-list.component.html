@@ -1,3 +1,28 @@
 
   <h1>Topic List</h1>
   <p>topics list works</p>
+
+  <select class="filter" (change)="onChangeCategory($event.target.value)">
+    <option value="allCategories" selected="selected" >All Categories</option>
+    <option value="C#">C#</option>
+    <option value="Javascript">Javascript</option>
+    <option value="Angular2">Angular2</option>
+  </select>
+
+  <div *ngFor = "let topic of masterTopicList" class="panel panel-default">
+    <div class="panel-body">
+    <h3><em>{{topic.topicName}}</em> under {{topic.topicCategory}} category.</h3>
+    <p *ngFor="let comment of topic.comments">
+    {{comment.userName}}</p>
+    <button (click) = "displayCommentForm(topic)">Comment</button>
+    </div>
+  </div>
+
+  <div *ngIf="topicToComment" class="hidepanel well">
+    <h3>Topic title goes here</h3>
+    <label for="username">Your Name</label>
+    <input #newUserName class="form-control">
+    <label for="comment">Your Comment</label>
+    <input #newComment class="form-control">
+    <button (click) = "AddComment(newUserName.value, newComment.value); newUserName.value=''; newComment.value=''">Add Comment</button>
+  </div>
