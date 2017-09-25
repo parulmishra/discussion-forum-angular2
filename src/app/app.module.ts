@@ -9,12 +9,17 @@ import { routing } from './app.routing';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 
+import { AskComponent } from './ask/ask.component';
+import { CategoryPipe } from './category.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     TopicListComponent,
     WelcomeComponent,
-    AboutComponent
+    AboutComponent,
+    AskComponent,
+    CategoryPipe
   ],
   imports: [
     BrowserModule,

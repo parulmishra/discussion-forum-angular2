@@ -1,0 +1,17 @@
+<div>
+  <h3>Start a new Thread</h3>
+  <label for="topicName">User Name</label>
+  <input #newTopicName class="form-control">
+
+  <label>Category</label>
+  <select #newCategory>
+    <option [ngValue]="null">Please choose...</option>
+    <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
+  </select><br/>
+  <hr>
+  <label for="userName">Topic Name</label>
+  <input #newUser class="form-control">
+
+
+  <button (click) = "addTopic(newTopicName.value, newCategory.value, newUser.value ); newTopicName.value=''; newCategory.value=''; newUser.value=''">Add Topic </button>
+</div>
